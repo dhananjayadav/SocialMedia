@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/projectImages/logo.png" type="image/x-icon">
+  </head>
+  <body class="bodyLoggin">
+    <div class="signup-box">
+      <div class="proLogo">
+        <img class="mainlogo" src="/projectImages/logo.png" alt="">
+        <h1 class="signname">SocialMedia</h1>
+      </div>
+      <div style="height: 5vmin;" ></div>
+      <form action="/signup" method="POST"> 
+        <input id="name" class="signup-input" name="name" type="text" placeholder="Enter your name" />
+        <input id="username" class="signup-input" name="username" type="text" placeholder="Enter username" />
+        <input id="email" class="signup-input" name="email" type="email" placeholder="Enter your email" />
+        <div class="passwordBox">
+          <input class="pass-input" type="password" name="password" id="password" placeholder="Enter new password">
+          <img class="eyespass" id="closeeye" src="/projectImages/closeeye.png" alt="">
+          <img hidden class="eyespass" id="openeye" src="/projectImages/openeye.png" alt="">
+        </div>
+        <button id="submitSignBtn" class="signup-btn" type="submit" >SignUp</button>
+        <button id="submitForm" hidden></button>
+      </form>
+      <p class="para-2">
+        Already have an account? <a class="sign-linker" href="/">SignIn</a>
+      </p>
+    </div>
+    <script src="/javascripts/signup.js"></script>
+  </body>
+</html>

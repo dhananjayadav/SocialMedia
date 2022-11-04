@@ -1,0 +1,118 @@
+<%- include('partials/navbar') %>
+<div class="profileBox">
+    <div class="allPostBox">
+        <% posts.forEach(function(post){ %>
+            <div class="postBox">
+                <div class="posthead">
+                        <img class="postUserImage" src="/uploads/<%=user.avatar%>" alt="loading...">
+                        <div class="postUserName">
+                            <h6 class="namingPost"><%= user.name %></h6>
+                            <% var s = post.createdAt+"" %> 
+                            <p6 class="postdate"><%= s.substring(4,15) %></p6>
+                        </div>
+                        
+                        <div class="postInfo">
+                            <a href="/delete-post/<%= post._id %>"><img  class="postInfoImg darkdustbin" src="/projectImages/darkdustbin.png"  alt="loading..."></a>
+                        </div>
+                        
+                </div>
+                <h6 class="PostContent"><%= post.postTitle %></h6>
+                <p class="PostContent"><%= post.postContent %></p>
+               <% if(post.avatar.includes(".mp4")){ %>
+                <video controls class="postImage"  src="/uploads/<%= post.avatar %>"></video>
+               <% }else if(post.avatar.includes('.mp3')){ %>
+                    <audio class="postImage" src="/uploads/<%= post.avatar %>"></audio>
+               <% }else{ %>
+                    <img class="postImage" src="/uploads/<%= post.avatar %>" alt="loading...">
+               <% } %>
+                <div class="postDetail">
+                    <% if(post.likes.includes(user._id)){ %>
+                        
+                        <a href="/like/<%= post._id %>"> <img class="postSymbol" src="/projectImages/likedark.png" alt="..."></a>
+                    <% } else { %>
+                        <a href="/like/<%= post._id %>"> <img class="postSymbol" src="/projectImages/like.png" alt="..."></a>
+                    <% } %>
+                  
+                 
+                    <span class="postSymbolInfo"><%= post.likes.length %></span>
+                    <% if(post.dislikes.includes(user._id)){ %>
+                        
+                        <a href="/dislike/<%= post._id %>"> <img class="postSymbol" src="/projectImages/dislike dark.png" alt="..."></a>
+                    <% } else { %>
+                        <a href="/dislike/<%= post._id %>"> <img class="postSymbol" src="/projectImages/dislike.png" alt="..."></a>
+                    <% } %>
+                    <span class="postSymbolInfo"><%= post.dislikes.length %></span>
+                    <!-- <img class="postSymbol" src="/projectImages/comment.png" alt="..."> -->
+                    <!-- <span class="postSymbolInfo">2</span> -->
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <div class="proSuperBox">
+        <form class="profileDetails" action="/update-profile" method="POST">
+            <div class="userDetails">
+                <input id="username" name="username" placeholder="Enter username" class="userInfo" disabled type="text" value="<%= user.username %>">
+            </div>
+            <div class="userDetails">
+                 <img  class="descriptionlogo" src="/projectImages/namelogo.png" alt="">
+                 <input id="name" name="name" placeholder="Enter name"  class="userInfo" disabled type="text" value="<%= user.name %>">
+            </div>
+            <div class="userDetails">
+                <img class="descriptionlogo" src="/projectImages/maillogo.png" alt="">
+                <input id="email" name="email" placeholder="Enter email"  class="userInfo" disabled type="text" value="<%= user.email %>">
+           </div>
+            <div class="userDetails">
+                <img class="descriptionlogo" src="/projectImages/calllogo.png" alt="">
+               <input id="number" name="phone" placeholder="Enter phone number" class="userInfo" disabled type="text" value="<%= user.phone %>">
+            </div>
+            <div class="userDetails">
+                <img class="descriptionlogo" src="/projectImages/genderlogo.png" alt="">
+                <input id="genderhider" placeholder="Select gender" class="userInfo" disabled type="text" value="<%= user.gender %>">
+                <select hidden class="genderSelector" name="gender" id="">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="userDetails">
+               <img class="descriptionlogo" src="/projectImages/citylogo.png" alt="">
+               <input name="city" placeholder="Enter city name" class="userInfo" disabled type="text" value="<%= user.city %>">
+            </div>
+            <div class="userDetails">
+             <img class="descriptionlogo" src="/projectImages/aboutlogo.png" alt="">
+             <input name="about" placeholder="Enter something about you" class="userInfo" disabled type="text" value="<%= user.about %>">
+            </div>
+            <div id="show-profile-buttons" class="profile-buttons">
+                <button hidden id="submitForm"></button>
+                <button class="profile-btn save-btn">
+                      Save
+                </button>
+                <a style="text-decoration: none;" class="profile-btn cancel-btn" href="/profile">
+                      Cancel
+                </a>
+            </div>
+            <div id="edit-profile">
+                <button class="profile-btn edit-btn">
+                    Edit Profile
+                </button>
+            </div>
+        </form>
+        <div class="rightSideProfile"> <img class="profileImage" src="/uploads/<%= user.avatar %>" alt="..."> </div>
+    </div>
+</div>
+<div hidden class="changeProfileBox">
+   <form class="newbox" action="upload-image" method="POST" enctype="multipart/form-data">
+        <img class="newImageCircle" src="" alt="">
+        <input hidden type="file" name="avatar" id="avatar" value="<%=user.avatar%>">
+        <input hidden type="text" name="oldavatar" value="<%=  user.avatar %>">
+
+        <div class="newImageButtons">
+            <button class="newImg-btn newImg-saveBtn">Save</button>
+            <button id="newimagecancel" class="newImg-btn newImg-cancelBtn">Cancel</button>
+        </div>
+   </form>
+</div>
+<script src="/javascripts/profileEdit.js"></script>
+<script src="/javascripts/profileInputValidate.js"></script>
+<%- include('partials/footer') %>

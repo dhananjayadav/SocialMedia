@@ -1,0 +1,126 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  height: 100%;
+}
+
+.bodyLoggin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.signup-box{
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vmin;
+  width: 60vmin;
+  box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.7);
+  background-color: white;
+  border-radius: 1vmin;
+  /* background: linear-gradient(to bottom left , rgba(0, 0, 255, 0.3),rgba(0, 0, 255, 0.5),rgba(0, 0, 255, 0.7)); */
+}
+form{
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-input{
+  height: 5vmin;
+  width: 80%;
+  margin: 5px 0px;
+  padding-left: 2px;
+  border-radius: 1vmin;
+  border: 2px solid grey;
+}
+.signup-input:focus{
+  outline: 2px solid rgb(0, 184, 230);
+}
+.signup-btn{
+  margin-top: 5px;
+  height: 5vmin;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 1vmin;
+  color: white;
+}
+.signup-btn:hover{
+  cursor: pointer;
+}
+.sign-linker{
+  font-size: 3vmin;
+  font-weight: 800;
+  color: rgb(190, 42, 42);
+}
+.mainlogo{
+  height: 7vmin;
+}
+.proLogo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+}
+.signboxinputs{
+  height: 25vmin;
+}
+.signname{
+  font-family: 'Montez';
+  font-weight: 600;
+  font-size: 5vmin;
+  color: seagreen;
+}
+.forgotBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40vmin;
+  width: 60vmin;
+  align-items: center;
+  justify-content: center;
+}
+.forgotmsg{
+  padding: 1vmin;
+  color: gray;
+  width: 50vmin;
+}
+.forgotform{
+  height: 30vmin;
+}
+#warningconfirm{
+  color: #C82333;
+  height: 5vmin;
+}
+.eyespass{
+  height: 4vmin;
+  cursor: pointer;
+}
+.passwordBox{
+  display: flex;
+  align-items: center;
+  height: 5vmin;
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 1vmin;
+  width: 80%;
+  overflow: hidden;
+  margin: 1vmin;
+}
+.pass-input{
+  border: none;
+  height: 5vmin;
+  width: 50vmin;
+  padding-left: 1vmin;
+}
+.pass-input:focus{
+  outline: none;
+}

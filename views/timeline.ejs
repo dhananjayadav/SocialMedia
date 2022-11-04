@@ -1,0 +1,59 @@
+<%- include('partials/navbar') %>
+<div class="timelineBox">
+    <div class="allPostBox">
+        <% posts.forEach(function(post){ %>
+            <div class="postBox">
+                <div class="posthead">
+                      <%  users.forEach(function(myuser){ %>
+                         <%   if(post.postedBy.equals(myuser._id)){ %>
+                                <img class="postUserImage" src="/uploads/<%= myuser.avatar %>" alt="loading...">
+                            <div class="postUserName">
+                            <h6 class="namingPost"><%= myuser.name %></h6>
+                            <% var s = post.createdAt+"" %> 
+                            <p6 class="postdate"><%= s.substring(4,15) %></p6>
+                            </div>
+                            
+                               <% if(myuser._id.equals(user._id)){ %>
+                                <div class="postInfo">
+                                    <a href="/delete-post/<%= post._id %>"><img  class="postInfoImg darkdustbin" src="/projectImages/darkdustbin.png"  alt="loading..."></a>
+                                </div>
+                               <% } %>
+                         <%     } %>
+                      <% }) %>
+                           
+                        
+                </div>
+                <h6 class="PostContent"><%= post.postTitle %></h6>
+                <p class="PostContent"><%= post.postContent %></p>
+                <% if(post.avatar.includes(".mp4")){ %>
+                    <video controls class="postImage"  src="/uploads/<%= post.avatar %>"></video>
+                   <% }else if(post.avatar.includes('.mp3')){ %>
+                        <audio class="postImage" src="/uploads/<%= post.avatar %>"></audio>
+                   <% }else{ %>
+                        <img class="postImage" src="/uploads/<%= post.avatar %>" alt="loading...">
+                   <% } %>
+                <div class="postDetail">
+                    <% if(post.likes.includes(user._id)){ %>
+                        
+                        <a href="/like/<%= post._id %>"> <img class="postSymbol" src="/projectImages/likedark.png" alt="..."></a>
+                    <% } else { %>
+                        <a href="/like/<%= post._id %>"> <img class="postSymbol" src="/projectImages/like.png" alt="..."></a>
+                    <% } %>
+                  
+                 
+                    <span class="postSymbolInfo"><%= post.likes.length %></span>
+                    <% if(post.dislikes.includes(user._id)){ %>
+                        
+                        <a href="/dislike/<%= post._id %>"> <img class="postSymbol" src="/projectImages/dislike dark.png" alt="..."></a>
+                    <% } else { %>
+                        <a href="/dislike/<%= post._id %>"> <img class="postSymbol" src="/projectImages/dislike.png" alt="..."></a>
+                    <% } %>
+                    <span class="postSymbolInfo"><%= post.dislikes.length %></span>
+                    <!-- <img class="postSymbol" src="/projectImages/comment.png" alt="..."> -->
+                    <!-- <span class="postSymbolInfo">2</span> -->
+                </div>
+            </div>
+        <% }) %>
+    </div>    
+</div>
+<%- include('partials/footer') %>

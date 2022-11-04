@@ -1,0 +1,29 @@
+.postCreateBox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createBox{
+    margin-top: 5vmin;
+    height: 70vmin;
+    width: 60vmin;
+    background-color: #fff;
+    box-shadow:0 0 1px  grey;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2vmin;
+}
+.postBtn{
+    border: none;
+    color: white;
+    background-color: seagreen;
+    height: 5vmin;
+    width: 100%;
+}
+.contentpost{
+    width: 100%;
+}

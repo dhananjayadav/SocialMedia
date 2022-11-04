@@ -1,0 +1,27 @@
+<%- include('partials/navbar') %>
+ <div class="underbox">
+  <div class="forgotBox">
+    <div class="proLogo" style="margin-bottom: 2vmin;">
+      <img class="mainlogo" src="/projectImages/logo.png" alt="">
+      <h1 class="signname">SocialMedia</h1>
+    </div>
+    <form style="height: 60vmin;" class="forgotform formclass" action="/reset-password" method="POST">
+      <div class="passwordBox">
+        <input type="password" name="oldpassword" placeholder="Enter old password" class="pass-input">
+      </div>
+      <div class="passwordBox">
+          <input class="pass-input" type="password" name="newpassword" id="pass" placeholder="Enter new password">
+          <img class="eyespass" id="closeeye" src="/projectImages/closeeye.png" alt="">
+          <img hidden class="eyespass" id="openeye" src="/projectImages/openeye.png" alt="">
+      </div>
+      <div class="passwordBox">
+          <input class="pass-input" type="password" name="" id="cpass" placeholder="Enter confirm password">
+      </div>
+      <p hidden  id="warningconfirm">Password are not matching</p>
+      <button class="signup-btn" type="submit" id="saveBtn" >Save password</button>
+      <button hidden id="submitForm" type="submit"></button>
+    </form>
+  </div>
+ </div>
+    <script src="/javascripts/changePassword.js"></script>
+<%- include('partials/footer') %>

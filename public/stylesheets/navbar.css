@@ -1,0 +1,95 @@
+.dnavbar{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 8vmin;
+    box-shadow: 0 0 1vmin grey;
+    display: flex;
+    justify-content: space-between;
+    background-color: #23272B;
+    color: white;
+    align-items: center;
+    padding-right: 5vmin;
+}
+.leftnav{
+    height: 8vmin;
+    width: 30vmin;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.usernav{
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+}
+.hiddenBox{
+    height: 8vmin;
+    width: 100%;
+}
+.dnavlink{
+    color: white;
+    text-decoration: none;
+}
+.dnavlink:hover{
+    color: white;
+}
+.dnavcircle{
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    border: 2px solid white;
+    font-size: 3vmin;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postCreator{
+    position: absolute;
+    height: 3vmin;
+    width: 3vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vmin;
+    position: absolute;
+    top: 10%;
+}
+.rightnav{
+    height: 8vmin;
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 2vmin;
+}
+.logosocial{
+    height: 5vmin;
+    /* width: 5vmin; */
+}
+.navdetail{
+    height: 20vmin;
+    width: 20vmin;
+    background-color: white;
+    position: absolute;
+    top: 80%;
+    right: 0%;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    padding: 1vmin;
+    border-radius: 2px;
+    box-shadow: 0 0 2px grey;
+}
+.dnavlinkto{
+    text-decoration: none;
+    color: #23272B;
+}
+
+.lognav{
+    margin-top: 1vmin;
+}
